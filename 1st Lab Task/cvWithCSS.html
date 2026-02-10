@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asra Shahbaz - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #4a5568;
+            font-size: 15px;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #764ba2;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: #764ba2;
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            color: #4a5568;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        ul li strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+            margin: 30px 0;
+        }
+
+        .header-info {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .header-info p {
+            margin-bottom: 8px;
+        }
+
+        .header-info strong {
+            display: inline-block;
+            min-width: 80px;
+            color: #667eea;
+        }
+
+        .project-item {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .experience-item {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #764ba2;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.2);
+        }
+
+        .experience-item p {
+            margin-bottom: 0;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.15);
+        }
+
+        .skill-card strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            .project-item:hover,
+            .experience-item:hover,
+            .skill-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Asra Shahbaz</h1>
+    <p>
+        <strong>Lahore</strong><br>
+        Email: <a href="mailto:asrashahbaz361@gmail.com">asrashahbaz361@gmail.com</a><br>
+        Phone: <a href="tel:+923284779584">+92 3284779584</a><br>
+        LinkedIn: <a href="https://linkedin.com/in/asra-shahbaz/" target="_blank">linkedin.com/in/asra-shahbaz</a><br>
+        GitHub: <a href="https://github.com/asra-shahbaz123" target="_blank">github.com/asra-shahbaz123</a>
+    </p>
+
+    <hr>
+
+    <h2>EDUCATION</h2>
+    <p>
+        <strong>Bachelor of Computer Science</strong> | Feb 2024 - 2028<br>
+        COMSATS Institute of Information and Technology<br>
+        CGPA: 3.84/4
+    </p>
+    <p>
+        <strong>Relevant Coursework:</strong><br>
+        Programming Fundamentals, Object-Oriented Programming, Discrete Structures, Information and Communication Technology (SDLC basics), Data Structures, Calculus, Probability/Statistics (data analysis foundations).
+    </p>
+
+    <hr>
+
+    <h2>SKILLS</h2>
+    <ul>
+        <li><strong>Programming Languages:</strong> C, C++, Java, JavaScript, Python</li>
+        <li><strong>Frontend Development:</strong> HTML, CSS, JavaScript, React.js, Node.js, Next.js</li>
+        <li><strong>Tools & Technologies:</strong> Git, VS Code, IntelliJ IDEA, MS Excel, MS Word, MS Access</li>
+        <li><strong>Soft Skills:</strong> Detail Oriented, Problem Solving, Teamwork, Strong Communication Skills</li>
+    </ul>
+
+    <hr>
+
+    <h2>PROJECTS</h2>
+    
+    <h3>Distributed Job Scheduling & Automation Platform</h3>
+    <ul>
+        <li>Built a distributed job scheduler handling Email, SMS, WhatsApp, Push Notifications, Image Compression, Report Generation, and Log Cleanup with job lifecycle management, retries, failure handling, and real-time monitoring.</li>
+        <li>Implemented role-based access control (Firebase Auth), integrated Resend, Twilio, and Firebase APIs, and exposed REST endpoints for secure job submission, tracking, and admin monitoring.</li>
+    </ul>
+
+    <h3>Mind Meter (Full-Stack Mood Tracking App)</h3>
+    <ul>
+        <li>Built a full-stack mood tracker with authentication, mood logging, and data visualization.</li>
+        <li>Used React.js for frontend, Node.js/Express for backend, and database integration for persistent tracking.</li>
+    </ul>
+
+    <h3>Tetris Game in Java (OOP Concepts)</h3>
+    <ul>
+        <li>Built a Tetris game using OOP concepts like inheritance and polymorphism.</li>
+        <li>Added score tracking and block rotation. Incorporated features like score tracking through data management.</li>
+    </ul>
+
+    <h3>Movie App with React.JS and API Integration</h3>
+    <ul>
+        <li>Built a responsive movie app in React.js with REST API integration.</li>
+        <li>Implemented features like searching and displaying movie details (e.g., title, release date).</li>
+    </ul>
+
+    <hr>
+
+    <h2>LEADERSHIP AND TEAMWORK EXPERIENCE</h2>
+    
+    <p>
+        <strong>Women in Tech Director & Treasurer @ACM</strong> | Aug 2025 – Present<br>
+        Leading women in tech initiatives through events, workshops, mentorship, and student community engagement.
+    </p>
+
+    <p>
+        <strong>PR Lead, TechnoVerse (Flagship Tech Event of Comsats)</strong> | Jan 2025 – June 2025<br>
+        Led PR strategies and team efforts to boost community engagement; partnered with 20+ tech communities for event promotion.
+    </p>
+
+    <p>
+        <strong>Marketing Co-Lead @Google Developers Group on Campus</strong> | Sep 2024 – Sep 2025<br>
+        Coordinated marketing efforts to promote events and initiatives, increasing engagement with students.
+    </p>
+
+</body>
+</html>
