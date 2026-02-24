@@ -50,7 +50,8 @@ body { margin: 0; }
     font-weight: bold;
     font-size: medium;
     display: flex;
-    align-items:space-evenly;
+    align-items:center;
+    justify-content: space-evenly;
     gap: 30px;
     
 }
@@ -126,12 +127,15 @@ body { margin: 0; }
 }
 .productBoxes{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-evenly;
     margin:10px;
-    padding:30px;
+    padding:40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
+}
+.box{
+    width:400px;
 }
 .box img {
     width: 100%;
@@ -149,6 +153,7 @@ body { margin: 0; }
     color:#532D6D;
     font-size: medium;
     margin-top: 20px;
+    overflow: hidden;
 }
 .sfhbDiv{
     display: flex;
@@ -185,4 +190,143 @@ body { margin: 0; }
     font-size: 14px;
     color:rgb(72, 72, 72);
     line-height: 1.6;
+}
+.pbBtn {
+    background-color: #532D6D;
+    color: white;
+    border: none;
+    padding: 14px 0;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.pbBtn:hover {
+    background-color: #3e1f54;
+}
+.ourStorySection {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+.ourStoryBtn {
+    background-color: #532D6D;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.ourStoryBtn:hover {
+    background-color: #3e1f54;
+}
+
+.newsletterSection {
+    background-color: #532D6D;
+    background-image: repeating-radial-gradient(circle at 20px 20px, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 2px, transparent 2px, transparent 40px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding: 60px 80px;
+    color: white;
+    font-family: sans-serif;
+}
+.newsletterLeft {
+    max-width: 350px;
+}
+.newsletterLeft h2 {
+    font-size: 1.6rem;
+    margin: 0 0 15px 0;
+}
+.newsletterLeft p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+.newsletterRight {
+    max-width: 450px;
+    width: 100%;
+}
+.newsletterRight label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.newsletterInputRow {
+    display: flex;
+    gap: 0;
+}
+.newsletterInput {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+.subscribeBtn {
+    background-color: #e0e0e0;
+    color: #111;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.subscribeBtn:hover {
+    background-color: #ccc;
+}
+.newsletterDisclaimer {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding: 60px 80px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    font-family: sans-serif;
+}
+.footerLogo img {
+    width: 120px;
+}
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 160px;
+}
+.footerColumn h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111;
+}
+.footerColumn a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+}
+.footerColumn a:hover {
+    color: #532D6D;
 }
