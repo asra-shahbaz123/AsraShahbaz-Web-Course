@@ -330,3 +330,76 @@ body { margin: 0; }
 .footerColumn a:hover {
     color: #532D6D;
 }
+
+@media (max-width:768px){
+
+.Header{
+    flex-direction:column;
+    height:auto;
+    gap:20px;
+    padding:15px;
+}
+
+.HelpfulLink{
+    margin-left:0;
+}
+
+.rightItems{
+    gap:15px;
+    font-size:14px;
+}
+
+.Header2{
+    flex-wrap:wrap;
+    gap:15px;
+    text-align:center;
+}
+
+.logo img{
+    width:60px;
+}
+
+.Banner{
+    height:250px;
+}
+
+.BannerElements{
+    padding:40px 20px;
+}
+
+.productBoxes{
+    flex-direction:column;
+    align-items:center;
+    padding:20px;
+}
+
+.box{
+    width:90%;
+}
+
+.cbtlVideo img{
+    width:100%;
+}
+
+.ourLARootsText{
+    width:100%;
+}
+
+.newsletterSection{
+    padding:40px 20px;
+}
+
+.newsletterInputRow{
+    flex-direction:column;
+}
+
+.subscribeBtn{
+    width:100%;
+}
+
+.footer{
+    flex-direction:column;
+    gap:30px;
+}
+
+}
