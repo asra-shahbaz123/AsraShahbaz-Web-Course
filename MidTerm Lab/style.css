@@ -1,74 +1,70 @@
 body { margin: 0; }
-.Header{
+
+.Header {
     background-color: #532D6D;
     display: flex;
     align-items: center;
     gap: 180px;
     height: 80px;
-   
 }
-.mainHeader{
+.mainHeader {
     position: sticky;
     top: 0;
     z-index: 1000;
     background: white;
 }
-
-.rightItems{
+.rightItems {
     display: flex;
     align-items: center;
 }
-.HelpfulLink{
- background-color: white;
- margin-left: 50px;
- padding: 10px;
- font-weight: bold;
- font-family: Montserrat, sans-serif;
+.HelpfulLink {
+    background-color: white;
+    margin-left: 50px;
+    padding: 10px;
+    font-weight: bold;
+    font-family: Montserrat, sans-serif;
 }
-.SearchBar{
+.SearchBar {
     display: flex;
     align-items: center;
     width: 300px;
     height: 50px;
     background-color: white;
-    border-radius: 15px ;
+    border-radius: 15px;
     overflow: hidden;
 }
-.searchInput{
-    width:100%;
+.searchInput {
+    width: 100%;
     font-size: 1rem;
     border: none;
-    padding:10px;
+    padding: 10px;
 }
-.SearchIcon{
-    padding:10px;
+.SearchIcon {
+    padding: 10px;
 }
-
-.rightItems{
-    color:white;
+.rightItems {
+    color: white;
     font-family: sans-serif;
     font-weight: bold;
     font-size: medium;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-evenly;
     gap: 30px;
-    
 }
-.login{
-    display:flex;
+.login {
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap:5px;
+    gap: 5px;
 }
-.Cart{
-    display:flex;
+.Cart {
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap:5px;
+    gap: 5px;
 }
-
-.Header2{
+.Header2 {
     padding: 15px;
     display: flex;
     justify-content: space-evenly;
@@ -76,119 +72,117 @@ body { margin: 0; }
     font-size: medium;
     font-weight: bold;
     font-family: sans-serif;
-   
-    
 }
-.logo{
+.logo {
     display: flex;
     justify-content: space-around;
-    gap:2px;
+    gap: 2px;
 }
-.rightItems2{
+.rightItems2 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap:20px;
+    gap: 20px;
 }
-.Banner{
+.Banner {
     position: relative;
-    height:300px;
-    width:100%;
+    height: 300px;
+    width: 100%;
     background-image: url('Banner_Desktop.png');
     background-size: cover;
-    color:white;
-    padding:20px;
+    color: white;
+    padding: 20px;
     font-family: sans-serif;
     font-size: larger;
+    box-sizing: border-box;
 }
-.BannerElements{
-    padding:80px;
+.BannerElements {
+    padding: 80px;
 }
-.bannerBtn{
-    padding:10px;
-    width:150px;
+.bannerBtn {
+    padding: 10px;
+    width: 150px;
     font-size: medium;
     font-weight: bold;
     font-family: sans-serif;
 }
-.centertext{
+.centertext {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:rgb(240, 238, 238);
+    background-color: rgb(240, 238, 238);
     padding: 30px;
     font-family: sans-serif;
     font-weight: bold;
-
 }
-.centertext >*{
+.centertext > * {
     margin: 0;
 }
-.productBoxes{
+.productBoxes {
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
-    margin:10px;
-    padding:40px;
+    margin: 10px;
+    padding: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
 }
-.box{
-    width:400px;
+.box {
+    width: 400px;
 }
 .box img {
     width: 100%;
     border-radius: 20px;
 }
-.boxBlackText{
+.boxBlackText {
     font-family: sans-serif;
     font-weight: bold;
     font-size: larger;
     margin-top: 20px;
 }
-.boxPurpleText{
+.boxPurpleText {
     font-family: sans-serif;
     font-weight: bold;
-    color:#532D6D;
+    color: #532D6D;
     font-size: medium;
     margin-top: 20px;
-    overflow: hidden;
 }
-.sfhbDiv{
+.sfhbDiv {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px 0;
 }
-.shopForHomeBtn{
+.shopForHomeBtn {
     background-color: #532D6D;
-    color:white;
+    color: white;
     padding: 10px;
     font-family: sans-serif;
     font-size: medium;
     font-weight: bold;
     width: 200px;
     border: none;
+    cursor: pointer;
 }
-.ourLARoots{
+.ourLARoots {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(252, 252, 230);
     padding: 30px;
     margin-top: 20px;
-    gap:30px;
+    gap: 30px;
 }
 .cbtlVideo img {
-    width: 400px;     
+    width: 400px;
 }
 .ourLARootsText {
     width: 500px;
     font-family: sans-serif;
 }
-.ourLARootsText p{
+.ourLARootsText p {
     font-size: 14px;
-    color:rgb(72, 72, 72);
+    color: rgb(72, 72, 72);
     line-height: 1.6;
 }
 .pbBtn {
@@ -205,7 +199,6 @@ body { margin: 0; }
     margin-top: 15px;
     transition: background-color 0.2s ease;
 }
-
 .pbBtn:hover {
     background-color: #3e1f54;
 }
@@ -230,7 +223,6 @@ body { margin: 0; }
 .ourStoryBtn:hover {
     background-color: #3e1f54;
 }
-
 .newsletterSection {
     background-color: #532D6D;
     background-image: repeating-radial-gradient(circle at 20px 20px, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 2px, transparent 2px, transparent 40px);
@@ -295,8 +287,6 @@ body { margin: 0; }
     margin-top: 12px;
     line-height: 1.5;
 }
-
-/* Footer */
 .footer {
     display: flex;
     justify-content: center;
@@ -331,75 +321,153 @@ body { margin: 0; }
     color: #532D6D;
 }
 
-@media (max-width:768px){
+/* ========== CAROUSEL STYLES ========== */
 
-.Header{
-    flex-direction:column;
-    height:auto;
-    gap:20px;
-    padding:15px;
+.carouselSection {
+    padding: 20px 40px 10px;
+    background: #fff;
 }
 
-.HelpfulLink{
-    margin-left:0;
+.carouselTopBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: sans-serif;
 }
 
-.rightItems{
-    gap:15px;
-    font-size:14px;
+.slideCounter {
+    font-weight: bold;
+    font-size: 14px;
+    color: #532D6D;
+    font-family: sans-serif;
 }
 
-.Header2{
-    flex-wrap:wrap;
-    gap:15px;
-    text-align:center;
+.carouselBtns {
+    display: flex;
+    gap: 10px;
 }
 
-.logo img{
-    width:60px;
+.prevBtn, .nextBtn {
+    background-color: #532D6D;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    letter-spacing: 1px;
 }
 
-.Banner{
-    height:250px;
+.prevBtn:hover, .nextBtn:hover {
+    background-color: #3e1f54;
 }
 
-.BannerElements{
-    padding:40px 20px;
+#mySlider {
+    margin: 0 -10px;
 }
 
-.productBoxes{
-    flex-direction:column;
-    align-items:center;
-    padding:20px;
+#mySlider .box {
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
 }
 
-.box{
-    width:90%;
+#mySlider .box img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
 }
 
-.cbtlVideo img{
-    width:100%;
+.aiTag {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #888;
+    margin-top: 14px;
+    padding-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
-.ourLARootsText{
-    width:100%;
+/* hide slick default arrows since we use custom ones */
+.slick-prev, .slick-next {
+    display: none !important;
 }
 
-.newsletterSection{
-    padding:40px 20px;
-}
+/* ========== END CAROUSEL STYLES ========== */
 
-.newsletterInputRow{
-    flex-direction:column;
-}
 
-.subscribeBtn{
-    width:100%;
-}
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
 
-.footer{
-    flex-direction:column;
-    gap:30px;
-}
-
+    .Header {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 15px;
+    }
+    .HelpfulLink {
+        margin-left: 0;
+    }
+    .rightItems {
+        gap: 15px;
+        font-size: 14px;
+    }
+    .Header2 {
+        flex-wrap: wrap;
+        gap: 15px;
+        text-align: center;
+    }
+    .logo img {
+        width: 60px;
+    }
+    .Banner {
+        height: 250px;
+    }
+    .BannerElements {
+        padding: 40px 20px;
+    }
+    .productBoxes {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .box {
+        width: 90%;
+    }
+    .cbtlVideo img {
+        width: 100%;
+    }
+    .ourLARoots {
+        flex-direction: column;
+    }
+    .ourLARootsText {
+        width: 100%;
+    }
+    .newsletterSection {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+    .newsletterInputRow {
+        flex-direction: column;
+    }
+    .subscribeBtn {
+        width: 100%;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+    .carouselSection {
+        padding: 20px 15px 10px;
+    }
+    .carouselTopBar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }

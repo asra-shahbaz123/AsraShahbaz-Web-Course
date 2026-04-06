@@ -4,169 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
     <title>Buy Coffee, Tea, Powders Online|</title>
 </head>
 <body>
     <div class="mainHeader">
         <div class="Header">
-        <div class="HelpfulLink">
-            HELPFUL  LINKS
-            <div>
-                <i class="fa-solid fa-angle-down"></i>
+            <div class="HelpfulLink">
+                HELPFUL LINKS
+                <div><i class="fa-solid fa-angle-down"></i></div>
             </div>
-             
-        </div>
-        <div class="SearchBar">
-            <input placeholder="Search for Products..." class="searchInput"/>
-            <div class="SearchIcon">
-                <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="SearchBar">
+                <input placeholder="Search for Products..." class="searchInput"/>
+                <div class="SearchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
             </div>
-        </div>
-        <div class="rightItems">
-        <div class="Location">LOCATIONS</div>
-        <div class="login">
-            <div class="loginIcon"> 
-                <i class="fa-solid fa-user"></i>
-            </div>
-        <div>
-            LOG IN
-        </div>
-        </div>
-        <div class="Cart">
-            <div class="cartIcon">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-            </div>
-        <div class="cart"> 0 </div>
-        </div>
-        </div>
-        </div>
-    
-    <div>
-        <div class="Header2">
-            <div class="Menu">
-                <div> MENU </div>
-                <div class="MenuIcon">
-                    <i class="fa-solid fa-angle-down"></i>
+            <div class="rightItems">
+                <div class="Location">LOCATIONS</div>
+                <div class="login">
+                    <div class="loginIcon"><i class="fa-solid fa-user"></i></div>
+                    <div>LOG IN</div>
+                </div>
+                <div class="Cart">
+                    <div class="cartIcon"><i class="fa-solid fa-cart-arrow-down"></i></div>
+                    <div class="cart"> 0 </div>
                 </div>
             </div>
-            <div>
-                REWARDS
-            </div>
-            <div class="cafeOrder">
-            <div>
-                CAFE ORDERS
-            </div>
-            <div class="CafeIcon">
+        </div>
 
-            </div>
-            </div>
-            <div class="logo">
-                <img src="cbtlLogo.png" alt="logo">
-                <div class="logoText">
-            <div>THE COFFEE BEAN</div> 
-            <div class="&"> & </div>
-            <div>TEA LEAF</div>
-            </div>
-            </div>
-            
-            <div class="rightItems2">
-                <div>
-                    OUR STORY
+        <div>
+            <div class="Header2">
+                <div class="Menu">
+                    <div>MENU</div>
+                    <div class="MenuIcon"><i class="fa-solid fa-angle-down"></i></div>
                 </div>
-                <div>
-                    SUBSCRIPTIONS
+                <div>REWARDS</div>
+                <div class="cafeOrder">
+                    <div>CAFE ORDERS</div>
+                    <div class="CafeIcon"></div>
                 </div>
-                <div class="shopForHome">
-                    SHOP FOR HOME
-                    <div class="sfhIcon">
-                        <i class="fa-solid fa-angle-down"></i>
+                <div class="logo">
+                    <img src="cbtlLogo.png" alt="logo">
+                    <div class="logoText">
+                        <div>THE COFFEE BEAN</div>
+                        <div class="&"> & </div>
+                        <div>TEA LEAF</div>
+                    </div>
+                </div>
+                <div class="rightItems2">
+                    <div>OUR STORY</div>
+                    <div>SUBSCRIPTIONS</div>
+                    <div class="shopForHome">
+                        SHOP FOR HOME
+                        <div class="sfhIcon"><i class="fa-solid fa-angle-down"></i></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
     <div>
         <div class="Banner">
             <div class="BannerElements">
                 <h1>Protein is here.</h1>
                 <p>Your daily coffee ritual just got a boost.</p>
                 <button class="bannerBtn">ORDER NOW</button>
-        </div>
+            </div>
         </div>
     </div>
+
     <div>
         <div class="centertext">
-            <P>COFFEE, TEA, POWDERS & MORE</P>
-            <H1>SHOP FOR HOME</H1>
-                
+            <p>COFFEE, TEA, POWDERS & MORE</p>
+            <h1>SHOP FOR HOME</h1>
         </div>
     </div>
-    <div class="productBoxes">
-        <div class="box">
-            <img src="CBTL_333_1.png" alt="Coffee Product">
-            <div class="boxBlackText">
-                COFFEE
-            </div>
-            <div class="boxPurpleText">
-                SHOP COFFEE
-                <i class="fa-solid fa-angle-down"></i>
-            </div>
-        </div>
-        <div class="box">
-            <img src="Tea_HP_Coll.png" alt="Coffee Product">
-            <div class="boxBlackText">
-                TEA
-            </div>
-            <div class="boxPurpleText">
-                SHOP TEA
-                <i class="fa-solid fa-angle-down"></i>
-            </div>
-        </div>
-        <div class="box">
 
-            <img src="CBTL_333_3.png" alt="Coffee Product">
-            <div class="boxBlackText">
-                POWDERS
+    <!-- ===== CAROUSEL SECTION START ===== -->
+    <div class="carouselSection">
+
+        <div class="carouselTopBar">
+            <span class="slideCounter">Showing 1 of 10</span>
+            <div class="carouselBtns">
+                <button class="prevBtn"><i class="fa-solid fa-chevron-left"></i> PREV</button>
+                <button class="nextBtn">NEXT <i class="fa-solid fa-chevron-right"></i></button>
             </div>
-            <div class="boxPurpleText">
-                SHOP POWDERS
-                <i class="fa-solid fa-angle-down"></i>
-            </div>
         </div>
+
+        <div id="mySlider">
+            <div class="box"><img src="CBTL_333_1.png" alt="Coffee"><div class="boxBlackText">COFFEE</div><div class="boxPurpleText">SHOP COFFEE <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="Tea_HP_Coll.png" alt="Tea"><div class="boxBlackText">TEA</div><div class="boxPurpleText">SHOP TEA <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="CBTL_333_3.png" alt="Powders"><div class="boxBlackText">POWDERS</div><div class="boxPurpleText">SHOP POWDERS <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="CBTL_333_1.png" alt="Blends"><div class="boxBlackText">BLENDS</div><div class="boxPurpleText">SHOP BLENDS <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="Tea_HP_Coll.png" alt="Cold Brew"><div class="boxBlackText">COLD BREW</div><div class="boxPurpleText">SHOP COLD BREW <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="CBTL_333_3.png" alt="Espresso"><div class="boxBlackText">ESPRESSO</div><div class="boxPurpleText">SHOP ESPRESSO <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="CBTL_333_1.png" alt="Gift Sets"><div class="boxBlackText">GIFT SETS</div><div class="boxPurpleText">SHOP GIFT SETS <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="Tea_HP_Coll.png" alt="Matcha"><div class="boxBlackText">MATCHA</div><div class="boxPurpleText">SHOP MATCHA <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="CBTL_333_3.png" alt="Capsules"><div class="boxBlackText">CAPSULES</div><div class="boxPurpleText">SHOP CAPSULES <i class="fa-solid fa-angle-right"></i></div></div>
+            <div class="box"><img src="CBTL_333_1.png" alt="Accessories"><div class="boxBlackText">ACCESSORIES</div><div class="boxPurpleText">SHOP ACCESSORIES <i class="fa-solid fa-angle-right"></i></div></div>
         </div>
-        <div class="sfhbDiv">
-            <button class="shopForHomeBtn"> SHOP FOR HOME</button>
-        </div>
+
+    </div>
+    <!-- ===== CAROUSEL SECTION END ===== -->
+
+    <div class="sfhbDiv">
+        <button class="shopForHomeBtn">SHOP FOR HOME</button>
+    </div>
+
     <div class="ourLARoots">
         <div class="cbtlVideo">
             <img src="CBTL_LA_Brew_Video.webp" alt="cbtl video">
         </div>
         <div class="ourLARootsText">
             <h1>OUR L.A. ROOTS</h1>
-            <p>Founded by Herbert Hyman in 1963, The Coffee Bean & Tea Leaf opened its first store in Brentwood, Los Angeles, aiming to bring the best global coffee and tea to Southern
-             California. Known for quality and excellence, they quickly became pioneers in California's gourmet coffee scene. Today, the core philosophy remains the same: crafting hand-made beverages with pride, from seed to cup.</p>
+            <p>Founded by Herbert Hyman in 1963, The Coffee Bean & Tea Leaf opened its first store in Brentwood, Los Angeles, aiming to bring the best global coffee and tea to Southern California. Known for quality and excellence, they quickly became pioneers in California's gourmet coffee scene. Today, the core philosophy remains the same: crafting hand-made beverages with pride, from seed to cup.</p>
         </div>
     </div>
+
     <div>
         <div class="centertext">
-            <P>BROWSE MENU & ORDER ONLINE FOR PICKUP</P>
-            <H1>CAFE ORDERS</H1>
-                
+            <p>BROWSE MENU & ORDER ONLINE FOR PICKUP</p>
+            <h1>CAFE ORDERS</h1>
         </div>
     </div>
+
     <div class="productBoxes">
         <div class="box">
             <img src="Untitled_design_99.webp" alt="Coffee Product">
             <div class="boxBlackText">
                 <h2>50% OFF YOUR FIRST DRINK</h2>
-                <p style="font-weight: normal;"">Download The Coffee Bean® Rewards app and enjoy member perks and exclusive offers today!</p>
-                  </div>
-                  <button class="pbBtn"> DOWNLOAD THE APP</button>
-            
+                <p style="font-weight: normal;">Download The Coffee Bean® Rewards app and enjoy member perks and exclusive offers today!</p>
+            </div>
+            <button class="pbBtn">DOWNLOAD THE APP</button>
         </div>
         <div class="box">
             <img src="Square.webp" alt="Coffee Product">
@@ -174,19 +145,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 <h2>BROWSE CAFE MENU</h2>
                 <p style="font-weight: normal;">Let your taste travel with every cup. Featuring our new Protein Lattes.</p>
             </div>
-            <button class="pbBtn"> VIEW FULL MENU</button>
+            <button class="pbBtn">VIEW FULL MENU</button>
         </div>
         <div class="box">
-
             <img src="CBTL_Home_Col3.webp" alt="Coffee Product">
-            <div class="boxBlackText ">
-                <h2>START CAFE ORDER </h2>
+            <div class="boxBlackText">
+                <h2>START CAFE ORDER</h2>
                 <p style="font-weight: normal;">Enjoy your favorite The Coffee Bean & Tea Leaf drink in one of our local cafes or order supplies to make at home.</p>
             </div>
-            <button class="pbBtn"> ORDER NOW</button>
+            <button class="pbBtn">ORDER NOW</button>
         </div>
-        </div>
+    </div>
+
 </body>
+
 <div class="ourStorySection">
     <button class="ourStoryBtn">OUR STORY</button>
 </div>
@@ -206,7 +178,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </div>
 </div>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="footerLogo">
         <img src="cbtlLogo.png" alt="Coffee Bean Tea Leaf Logo">
@@ -233,5 +204,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <a href="#">Shipping</a>
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="script.js"></script>
 </html>
