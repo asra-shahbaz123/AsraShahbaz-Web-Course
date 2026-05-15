@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Login | Coffee Bean & Tea Leaf</title>
+    <style>
+        .authBox {
+            max-width: 420px;
+            margin: 80px auto;
+            padding: 40px;
+            border: 1px solid #ddd;
+            font-family: sans-serif;
+        }
+        .authBox h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #532D6D;
+        }
+        .authBox input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .authBox button {
+            width: 100%;
+            padding: 12px;
+            background-color: #532D6D;
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .authBox button:hover { background-color: #3e1f54; }
+        .authBox p { text-align: center; margin-top: 15px; font-size: 13px; }
+        .authBox a { color: #532D6D; }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <%- include('partials/flash') %>
+    <div class="authBox">
+        <h2>LOG IN</h2>
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">LOG IN</button>
+        </form>
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Admin Panel | Coffee Bean & Tea Leaf</title>
+    <style>
+        .adminWrap {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            font-family: sans-serif;
+        }
+        .adminWrap h1 { color: #532D6D; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 14px;
+        }
+        th { background-color: #532D6D; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <%- include('partials/flash') %>
+    <div class="adminWrap">
+        <h1>ADMIN PANEL</h1>
+        <p>Logged in as: <strong><%= session.userName %></strong></p>
+        <h2>All Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(u => { %>
+                <tr>
+                    <td><%= u.name %></td>
+                    <td><%= u.email %></td>
+                    <td><%= u.role %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

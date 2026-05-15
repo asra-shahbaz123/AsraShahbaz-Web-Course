@@ -1,0 +1,65 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
+const path = require('path');
+const { isLoggedIn } = require('./middleware/auth');
+
+const app = express();
+
+mongoose.connect('mongodb://127.0.0.1:27017/cbtlshop')
+    .then(() => console.log('db connected'))
+    .catch(err => console.log(err));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path}`);
+    next();
+});
+
+app.use(session({
+    secret: 'cbtlsecretkey123',
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/cbtlshop' }),
+    cookie: { maxAge: 1000 * 60 * 60 * 24 }
+}));
+
+app.use(flash());
+
+app.use((req, res, next) => {
+      console.log('session:', req.session) 
+    res.locals.currentUser = req.session.userId ? {
+        id: req.session.userId,
+        name: req.session.userName,
+        role: req.session.userRole
+    } : null;
+    next();
+});
+
+app.use('/', require('./routes/auth'));
+app.use('/admin', require('./routes/admin'));
+
+app.get('/', (req, res) => {
+    res.render('home', { messages: req.flash() });
+});
+
+app.get('/health', (req, res) => {
+    res.send('ok');
+});
+
+app.get('/checkout', isLoggedIn, (req, res) => {
+    res.render('checkout', { messages: req.flash() });
+});
+
+app.use((err, req, res, next) => {
+    console.error('Unhandled error:', err);
+    res.status(500).send('Server error');
+});
+
+app.listen(3000, () => console.log('running on port 3000'));

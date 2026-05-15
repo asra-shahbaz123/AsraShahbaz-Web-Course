@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Checkout | Coffee Bean & Tea Leaf</title>
+    <style>
+        .checkoutWrap {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .checkoutWrap h1 { color: #532D6D; }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <%- include('partials/flash') %>
+    <div class="checkoutWrap">
+        <h1>CHECKOUT</h1>
+        <p>Welcome, <%= currentUser.name %>! Your cart is empty for now.</p>
+        <a href="/"><button class="shopForHomeBtn" style="margin-top:20px;">CONTINUE SHOPPING</button></a>
+    </div>
+</body>
+</html>
