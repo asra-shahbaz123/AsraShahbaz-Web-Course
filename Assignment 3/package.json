@@ -1,7 +1,6 @@
 {
-  "name": "project",
+  "name": "lab-task-2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,13 +8,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "connect-flash": "^0.1.1",
-    "connect-mongo": "^4.6.0",
     "ejs": "^5.0.2",
     "express": "^5.2.1",
-    "express-session": "^1.19.0",
+    "express-ejs-layouts": "^2.5.1",
     "mongoose": "^9.6.2"
   }
 }
