@@ -73,6 +73,19 @@ app.get('/products', async (req, res) => {
     }
 });
 
+app.get('/products/:id', async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if (!product) {
+            return res.redirect('/products');
+        }
+        res.render('product-detail', { product });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/products');
+    }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

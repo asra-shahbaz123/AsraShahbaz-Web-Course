@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %> | The Coffee Bean & Tea Leaf</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .breadcrumb {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .product-detail-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        .product-image-box {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .product-image-box img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+        }
+        .product-info-box {
+            flex: 1;
+            font-family: Arial, sans-serif;
+        }
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .reviews {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        .reviews .stars {
+            color: #333;
+        }
+        .reviews .shipping-calc {
+            color: #543265;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .size-section h4, .quantity-section h4 {
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            color: #222;
+        }
+        .size-box {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #543265;
+            color: white;
+            font-size: 14px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            width: 120px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        .qty-controls button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: white;
+            cursor: pointer;
+            font-size: 18px;
+            color: #666;
+        }
+        .qty-controls input {
+            width: 40px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+        .purchase-options {
+            margin-bottom: 25px;
+        }
+        .purchase-option {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            cursor: pointer;
+            position: relative;
+        }
+        .purchase-option.selected {
+            border-color: #543265;
+            background: #faf8fb;
+        }
+        .purchase-option input[type="radio"] {
+            margin-top: 5px;
+            accent-color: #543265;
+        }
+        .option-text h5 {
+            margin: 0 0 5px 0;
+            color: #222;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .option-text p {
+            margin: 0;
+            color: #555;
+            font-size: 15px;
+        }
+        .save-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: #543265;
+            color: white;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+        .free-shipping-banner {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 13px;
+            color: #333;
+        }
+        .free-shipping-banner i {
+            font-size: 24px;
+            margin-top: 5px;
+        }
+        .gift-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .gift-options label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #222;
+            cursor: pointer;
+        }
+        .gift-options input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #543265;
+        }
+        .add-cart-btn {
+            width: 100%;
+            padding: 15px;
+            background: #543265;
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .add-cart-btn:hover {
+            background: #3a2247;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header -->
+    <div class="mainHeader">
+        <div class="Header">
+        <div class="HelpfulLink">
+            HELPFUL  LINKS
+            <div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+             
+        </div>
+        <div class="SearchBar">
+            <form action="/products" method="GET" style="display:flex; width:100%; align-items:center;">
+                <input name="search" placeholder="Search for products..." class="searchInput" value="" style="border:none;"/>
+                <button type="submit" class="SearchIcon" style="background:none; border:none; cursor:pointer;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <div class="rightItems">
+        <div class="Location">LOCATIONS</div>
+        <div class="login">
+            <div class="loginIcon"> 
+                <i class="fa-solid fa-user"></i>
+            </div>
+        <div>
+            LOG IN
+        </div>
+        </div>
+        <div class="Cart">
+            <div class="cartIcon">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+            </div>
+        <div class="cart"> 0 </div>
+        </div>
+        </div>
+        </div>
+    
+    <div>
+        <div class="Header2">
+            <button id="burgerBtn" class="burgerBtn">&#9776;</button>
+            <div id="navLinks" class="navLinks">
+            <div class="leftNav">
+            <div class="Menu">
+                <div> MENU </div>
+                <div class="MenuIcon">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </div>
+            <div>
+                REWARDS
+            </div>
+            <div class="cafeOrder">
+            <div>
+                CAFE ORDERS
+            </div>
+            </div>
+            </div>
+            <div class="logo">
+                <a href="/"><img src="/cbtlLogo.png" alt="logo"></a>
+                <div class="logoText" style="cursor:pointer;" onclick="window.location.href='/'">
+            <div>THE COFFEE BEAN</div> 
+            <div class="&"> & </div>
+            <div>TEA LEAF</div>
+            </div>
+            </div>
+            <div class="rightItems2">
+                <div>
+                    OUR STORY
+                </div>
+                <div>
+                    SUBSCRIPTIONS
+                </div>
+                <div class="shopForHome" onclick="window.location.href='/products'" style="cursor: pointer;">
+                    SHOP FOR HOME
+                    <div class="sfhIcon">
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Product Details Content -->
+    <div class="breadcrumb">
+        <a href="/"><i class="fa-solid fa-house"></i></a>
+        <span>|</span>
+        <a href="/products">Shop For Home</a>
+        <span>|</span>
+        <a href="/products?category=<%= product.category %>"><%= product.category %></a>
+        <span>|</span>
+        <span><%= product.name %></span>
+    </div>
+
+    <div class="product-detail-container">
+        <div class="product-image-box">
+            <img src="/<%= product.image %>" alt="<%= product.name %>">
+        </div>
+
+        <div class="product-info-box">
+            <h1 class="product-title"><%= product.name %></h1>
+            
+            <div class="reviews">
+                <span class="shipping-calc">Shipping</span> calculated at checkout.
+                <div class="stars" style="margin-left:auto;">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span style="color:#666; font-size:13px; margin-left:5px;">(0 Reviews)</span>
+                </div>
+            </div>
+
+            <div class="size-section">
+                <h4>Size</h4>
+                <div class="size-box">10oz Bag Whole Bean</div>
+            </div>
+
+            <div class="quantity-section">
+                <h4>Quantity</h4>
+                <div class="qty-controls">
+                    <button onclick="changeQty(-1)">−</button>
+                    <input type="text" id="qty" value="1" readonly>
+                    <button onclick="changeQty(1)">+</button>
+                </div>
+            </div>
+
+            <div class="purchase-options">
+                <label class="purchase-option selected" onclick="selectOption(this)">
+                    <input type="radio" name="purchase_type" value="one_time" checked>
+                    <div class="option-text">
+                        <h5>ONE TIME PURCHASE</h5>
+                        <p>$<%= product.price %>.99</p>
+                    </div>
+                </label>
+                
+                <label class="purchase-option" onclick="selectOption(this)">
+                    <div class="save-badge">Save up to 10%</div>
+                    <input type="radio" name="purchase_type" value="subscribe">
+                    <div class="option-text">
+                        <h5>SUBSCRIBE & SAVE</h5>
+                        <p style="color: #666; text-decoration: line-through; display: inline-block; margin-right: 5px;">$<%= product.price %>.99</p>
+                        <p style="color: #543265; display: inline-block; font-weight: bold;">$<%= (product.price * 0.9).toFixed(2) %></p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="free-shipping-banner">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <span style="color: #543265; font-weight: bold;">Free shipping*</span> for orders over $75!<br>
+                    (*48 Contiguous U.S.)<br>
+                    Add more products - $<span id="left-for-free">75.00</span> left.
+                </div>
+            </div>
+
+            <div class="gift-options">
+                <label>
+                    <input type="checkbox"> Add Gift Wrap + ($4.95 each)
+                </label>
+                <label>
+                    <input type="checkbox"> Add Gift Message
+                </label>
+            </div>
+
+            <button class="add-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        function changeQty(amount) {
+            const qtyInput = document.getElementById('qty');
+            let currentVal = parseInt(qtyInput.value);
+            if(currentVal + amount >= 1) {
+                qtyInput.value = currentVal + amount;
+            }
+        }
+
+        function selectOption(element) {
+            document.querySelectorAll('.purchase-option').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
