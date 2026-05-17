@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const Product = require('../../models/Product');
-const User = require('../../models/User');
-const verifyToken = require('../../middleware/verifyToken');
+const Product = require('../../../models/Product');
+const User = require('../../../models/User');
+const verifyToken = require('../../../middleware/verifyToken');
 
 // Load environment variables
 require('dotenv').config();

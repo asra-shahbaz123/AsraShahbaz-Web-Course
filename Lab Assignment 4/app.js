@@ -100,6 +100,21 @@ app.get('/products', async (req, res) => {
     }
 });
 
+app.get('/products/:id', async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if (!product) {
+            req.flash('error', 'Product not found');
+            return res.redirect('/products');
+        }
+        res.render('product-detail', { product, messages: req.flash() });
+    } catch (error) {
+        console.log(error);
+        req.flash('error', 'Something went wrong');
+        res.redirect('/products');
+    }
+});
+
 app.get('/health', (req, res) => {
     res.send('ok');
 });

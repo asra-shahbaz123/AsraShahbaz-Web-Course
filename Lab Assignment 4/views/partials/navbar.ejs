@@ -54,10 +54,12 @@
                 <% if (currentUser && currentUser.role === 'admin') { %>
                     <a href="/admin" style="color:#532D6D;font-weight:bold;text-decoration:none;">ADMIN PANEL</a>
                 <% } %>
-                <div class="shopForHome">
-                    SHOP FOR HOME
-                    <div class="sfhIcon"><i class="fa-solid fa-angle-down"></i></div>
-                </div>
+                <a href="/products" style="text-decoration:none; color:inherit; display:flex; align-items:center;">
+                    <div class="shopForHome">
+                        SHOP FOR HOME
+                        <div class="sfhIcon"><i class="fa-solid fa-angle-down"></i></div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
