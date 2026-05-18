@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product - Admin</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; margin: 0; }
+        .sidebar { width: 250px; background: #333; color: #fff; min-height: 100vh; padding: 20px; }
+        .sidebar h2 { color: #fff; }
+        .sidebar a { color: #bbb; text-decoration: none; display: block; margin: 10px 0; }
+        .sidebar a:hover { color: #fff; }
+        .content { flex: 1; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group select { width: 100%; padding: 8px; box-sizing: border-box; }
+        .btn { padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="/">Go to Store</a>
+        <a href="/admin">Dashboard</a>
+        <a href="/admin/products/new">Add Product</a>
+    </div>
+    <div class="content">
+        <h1>Edit Product</h1>
+        <form action="/admin/products/<%= product._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" value="<%= product.name %>" required>
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" name="price" step="0.01" value="<%= product.price %>" required>
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" name="category" value="<%= product.category %>" required>
+            </div>
+            <div class="form-group">
+                <label>Rating</label>
+                <input type="number" name="rating" step="0.1" min="0" max="5" value="<%= product.rating %>" required>
+            </div>
+            <div class="form-group">
+                <label>Stock</label>
+                <input type="number" name="stock" value="<%= product.stock %>" required>
+            </div>
+            <div class="form-group">
+                <label>Product Image (Leave blank to keep current image)</label>
+                <br>
+                <img src="<%= product.image.startsWith('/') ? product.image : '/' + product.image %>" alt="Current Image" width="100" style="margin-bottom: 10px;">
+                <input type="file" name="image" accept="image/*">
+            </div>
+            <button type="submit" class="btn">Update Product</button>
+        </form>
+    </div>
+</body>
+</html>
