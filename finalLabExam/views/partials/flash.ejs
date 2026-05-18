@@ -1,0 +1,10 @@
+<% if (messages.success && messages.success.length > 0) { %>
+    <div style="background:#d4edda;color:#155724;padding:12px 20px;text-align:center;font-family:sans-serif;">
+        <%= messages.success[0] %>
+    </div>
+<% } %>
+<% if (messages.error && messages.error.length > 0) { %>
+    <div style="background:#f8d7da;color:#721c24;padding:12px 20px;text-align:center;font-family:sans-serif;">
+        <%= messages.error[0] %>
+    </div>
+<% } %>

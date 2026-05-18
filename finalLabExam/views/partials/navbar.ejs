@@ -1,0 +1,68 @@
+<div class="mainHeader">
+    <div class="Header">
+        <div class="HelpfulLink">
+            HELPFUL LINKS
+            <div><i class="fa-solid fa-angle-down"></i></div>
+        </div>
+        <form action="/products" method="GET" class="SearchBar" style="margin: 0;">
+            <input type="text" name="search" placeholder="Search for Products..." class="searchInput"/>
+            <button type="submit" class="SearchIcon" style="background: none; border: none; cursor: pointer; color: white;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+        <div class="rightItems">
+            <div class="Location">LOCATIONS</div>
+            <% if (currentUser) { %>
+                <div class="login">
+                    <div class="loginIcon"><i class="fa-solid fa-user"></i></div>
+                    <div><%= currentUser.name %></div>
+                </div>
+                <a href="/logout" style="color:white;font-weight:bold;text-decoration:none;">LOG OUT</a>
+            <% } else { %>
+                <div class="login">
+                    <div class="loginIcon"><i class="fa-solid fa-user"></i></div>
+                    <a href="/login" style="color:white;font-weight:bold;text-decoration:none;">LOG IN</a>
+                </div>
+                <a href="/register" style="color:white;font-weight:bold;text-decoration:none;">REGISTER</a>
+            <% } %>
+            <div class="Cart">
+                <div class="cartIcon"><i class="fa-solid fa-cart-arrow-down"></i></div>
+                <div class="cart"> 0 </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="Header2">
+            <div class="Menu">
+                <div>MENU</div>
+                <div class="MenuIcon"><i class="fa-solid fa-angle-down"></i></div>
+            </div>
+            <div>REWARDS</div>
+            <div class="cafeOrder">
+                <div>CAFE ORDERS</div>
+            </div>
+            <div class="logo">
+                <img src="/cbtlLogo.png" alt="logo">
+                <div class="logoText">
+                    <div>THE COFFEE BEAN</div>
+                    <div class="&"> & </div>
+                    <div>TEA LEAF</div>
+                </div>
+            </div>
+            <div class="rightItems2">
+                <div>OUR STORY</div>
+                <div>SUBSCRIPTIONS</div>
+                <% if (currentUser && currentUser.role === 'admin') { %>
+                    <a href="/admin" style="color:#532D6D;font-weight:bold;text-decoration:none;">ADMIN PANEL</a>
+                <% } %>
+                <a href="/products" style="text-decoration:none; color:inherit; display:flex; align-items:center;">
+                    <div class="shopForHome">
+                        SHOP FOR HOME
+                        <div class="sfhIcon"><i class="fa-solid fa-angle-down"></i></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
