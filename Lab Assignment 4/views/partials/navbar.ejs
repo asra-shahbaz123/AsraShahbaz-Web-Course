@@ -4,10 +4,12 @@
             HELPFUL LINKS
             <div><i class="fa-solid fa-angle-down"></i></div>
         </div>
-        <div class="SearchBar">
-            <input placeholder="Search for Products..." class="searchInput"/>
-            <div class="SearchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
-        </div>
+        <form action="/products" method="GET" class="SearchBar" style="margin: 0;">
+            <input type="text" name="search" placeholder="Search for Products..." class="searchInput"/>
+            <button type="submit" class="SearchIcon" style="background: none; border: none; cursor: pointer; color: white;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
         <div class="rightItems">
             <div class="Location">LOCATIONS</div>
             <% if (currentUser) { %>
